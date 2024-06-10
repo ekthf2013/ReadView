@@ -2,10 +2,10 @@ import Foundation
 
 struct Post: Decodable {
     let id: String
-    let title: String
-    let review: String
-    let genre: String
+    var title: String
+    var review: String
+    var genre: String
     let imageURL: String
-    let createdAt: Date
+    var createdAt: Date
     let email: String
 }

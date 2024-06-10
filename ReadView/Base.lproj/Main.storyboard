@@ -370,7 +370,7 @@
         <!--작성-->
         <scene sceneID="hO4-3r-mXX">
             <objects>
-                <viewController id="vSr-42-JnC" customClass="ReviewViewController" customModule="ReadView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewViewController" id="vSr-42-JnC" customClass="ReviewViewController" customModule="ReadView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AHS-PA-iTv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

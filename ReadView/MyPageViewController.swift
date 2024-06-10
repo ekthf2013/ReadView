@@ -5,7 +5,7 @@ import FirebaseStorage
 import SDWebImage // 이미지 로딩을 위한 라이브러리
 
 class MyPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -36,7 +36,7 @@ class MyPageViewController: UIViewController, UITableViewDelegate, UITableViewDa
         do {
             try Auth.auth().signOut()
             tabBarController?.tabBar.isHidden = true
-
+            
             // 로그아웃 성공 시 로그인 화면으로 이동 (로그인 화면이 루트 뷰 컨트롤러라고 가정)
             if let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
                 self.navigationController?.setViewControllers([loginVC], animated: true)
@@ -53,7 +53,8 @@ class MyPageViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let db = Firestore.firestore()
         db.collection("reviews")
             .whereField("email", isEqualTo: userEmail)
-            .getDocuments { (querySnapshot, error) in
+            .getDocuments { [weak self] (querySnapshot, error) in
+                guard let self = self else { return }
                 if let error = error {
                     print("Error getting documents: \(error)")
                 } else {
@@ -62,7 +63,7 @@ class MyPageViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     } ?? []
                     self.tableView.reloadData()
                 }
-        }
+            }
     }
     
     // UITableViewDataSource 메소드
@@ -87,9 +88,57 @@ class MyPageViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 100 // 원하는 셀 높이로 설정합니다.
     }
     
-    // UITableViewDelegate 메소드 (선택 사항)
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        // 선택된 셀에 해당하는 리뷰를 가져옵니다.
+        let selectedReview = reviews[indexPath.row]
+        
+        // ReviewViewController를 가져옵니다.
+        if let reviewVC = storyboard?.instantiateViewController(withIdentifier: "ReviewViewController") as? ReviewViewController {
+            // ReviewViewController에 선택된 리뷰를 설정합니다.
+            reviewVC.selectedReview = selectedReview
+            
+            // 리뷰의 이미지를 비동기적으로 가져와서 전달합니다.
+            if let imageURL = URL(string: selectedReview.imageURL) {
+                URLSession.shared.dataTask(with: imageURL) { data, response, error in
+                    guard let data = data, error == nil else {
+                        print("Failed to load image: \(error?.localizedDescription ?? "Unknown error")")
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        let image = UIImage(data: data)
+                        print("Image loaded successfully: \(image ?? nil)")
+                        reviewVC.reviewImage = image
+                        self.navigationController?.pushViewController(reviewVC, animated: true)
+                    }
+                }.resume()
+            } else {
+                navigationController?.pushViewController(reviewVC, animated: true)
+            }
+        }
     }
 
+
+    
+    // UITableViewDelegate 메소드
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // 해당 셀의 데이터를 삭제합니다.
+            let review = reviews[indexPath.row]
+            
+            // 파이어베이스에서 해당 리뷰 데이터를 삭제합니다.
+            let db = Firestore.firestore()
+            db.collection("reviews").document(review.id).delete { [weak self] error in
+                guard let self = self else { return }
+                if let error = error {
+                    print("Error deleting document: \(error)")
+                } else {
+                    print("Document successfully deleted!")
+                    // 배열에서도 해당 리뷰 데이터를 삭제합니다.
+                    self.reviews.remove(at: indexPath.row)
+                    // 테이블 뷰에서 해당 행을 삭제합니다.
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            }
+        }
+    }
 }
