@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		FC64FBFD2C17013C00C96A92 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC64FBFC2C17013B00C96A92 /* PostTableViewCell.xib */; };
+		FC64FBFF2C17417700C96A92 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC64FBFE2C17417700C96A92 /* MyPageViewController.swift */; };
+		FC64FC012C17435F00C96A92 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC64FC002C17435F00C96A92 /* MyPageTableViewCell.swift */; };
+		FC64FC032C17469500C96A92 /* MyPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC64FC022C17469500C96A92 /* MyPageTableViewCell.xib */; };
 		FCBCC9042C0E1876002DA735 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCC9032C0E1876002DA735 /* AppDelegate.swift */; };
 		FCBCC9062C0E1876002DA735 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCC9052C0E1876002DA735 /* SceneDelegate.swift */; };
 		FCBCC9082C0E1876002DA735 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCC9072C0E1876002DA735 /* ViewController.swift */; };
@@ -35,6 +38,9 @@
 
 /* Begin PBXFileReference section */
 		FC64FBFC2C17013B00C96A92 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PostTableViewCell.xib; path = ../PostTableViewCell.xib; sourceTree = "<group>"; };
+		FC64FBFE2C17417700C96A92 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		FC64FC002C17435F00C96A92 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
+		FC64FC022C17469500C96A92 /* MyPageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageTableViewCell.xib; sourceTree = "<group>"; };
 		FCBCC9002C0E1876002DA735 /* ReadView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBCC9032C0E1876002DA735 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCBCC9052C0E1876002DA735 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +117,9 @@
 				FCBCC9352C0F40E3002DA735 /* ReviewViewController.swift */,
 				FCBCC9372C0F4286002DA735 /* PostCollectionViewCell.swift */,
 				FCBCC93E2C0F53C6002DA735 /* DetailViewController.swift */,
+				FC64FBFE2C17417700C96A92 /* MyPageViewController.swift */,
+				FC64FC002C17435F00C96A92 /* MyPageTableViewCell.swift */,
+				FC64FC022C17469500C96A92 /* MyPageTableViewCell.xib */,
 			);
 			path = ReadView;
 			sourceTree = "<group>";
@@ -193,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC64FC032C17469500C96A92 /* MyPageTableViewCell.xib in Resources */,
 				FCBCC90D2C0E1879002DA735 /* Assets.xcassets in Resources */,
 				FC64FBFD2C17013C00C96A92 /* PostTableViewCell.xib in Resources */,
 				FCBCC9102C0E1879002DA735 /* Base in Resources */,
@@ -208,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC64FC012C17435F00C96A92 /* MyPageTableViewCell.swift in Sources */,
 				FCBCC9262C0E1D3C002DA735 /* LoginViewController.swift in Sources */,
 				FCBCC9302C0EC31E002DA735 /* SearchViewController.swift in Sources */,
 				FCBCC9362C0F40E3002DA735 /* ReviewViewController.swift in Sources */,
@@ -215,6 +226,7 @@
 				FCBCC9082C0E1876002DA735 /* ViewController.swift in Sources */,
 				FCBCC9322C0EC544002DA735 /* PostTableViewCell.swift in Sources */,
 				FCBCC9282C0E1E50002DA735 /* SignupViewController.swift in Sources */,
+				FC64FBFF2C17417700C96A92 /* MyPageViewController.swift in Sources */,
 				FCBCC92A2C0E1F71002DA735 /* MainViewController.swift in Sources */,
 				FCBCC9342C0EC6ED002DA735 /* Post.swift in Sources */,
 				FCBCC9382C0F4286002DA735 /* PostCollectionViewCell.swift in Sources */,

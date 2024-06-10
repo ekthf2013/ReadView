@@ -79,8 +79,8 @@ class ReviewViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                         if let error = error {
                             self.showAlert(message: "리뷰 저장 실패: \(error.localizedDescription)")
                         } else {
-                            self.showAlert(message: "리뷰가 저장되었습니다.")
                             self.clearFields()
+                            self.showAlert1(message: "리뷰가 저장되었습니다.")
                         }
                     }
                 }
@@ -90,10 +90,18 @@ class ReviewViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
     }
 
-    
     private func showAlert(message: String) {
         let alertController = UIAlertController(title: "알림", message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "확인", style: .default))
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    private func showAlert1(message: String) {
+        let alertController = UIAlertController(title: "알림", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "확인", style: .default) { _ in
+            // 확인 버튼을 누를 때 홈 화면으로 이동
+            self.tabBarController?.selectedIndex = 0 // 홈 탭의 인덱스에 해당하는 값을 지정
+        })
         present(alertController, animated: true, completion: nil)
     }
     
@@ -128,4 +136,5 @@ class ReviewViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+
 }

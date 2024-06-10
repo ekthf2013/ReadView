@@ -97,7 +97,7 @@ class DetailViewController: UIViewController {
     
     // 삭제 성공 알림 표시 함수
     func showDeleteSuccessAlert() {
-        let alertController = UIAlertController(title: "알림", message: "포스트가 삭제되었습니다.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "알림", message: "리뷰가 삭제되었습니다.", preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "확인", style: .default) { _ in
             // 확인 버튼을 누를 때 홈 화면으로 이동
             self.navigationController?.popViewController(animated: true)
