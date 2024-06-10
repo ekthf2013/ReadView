@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC64FBFD2C17013C00C96A92 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC64FBFC2C17013B00C96A92 /* PostTableViewCell.xib */; };
 		FCBCC9042C0E1876002DA735 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCC9032C0E1876002DA735 /* AppDelegate.swift */; };
 		FCBCC9062C0E1876002DA735 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCC9052C0E1876002DA735 /* SceneDelegate.swift */; };
 		FCBCC9082C0E1876002DA735 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCC9072C0E1876002DA735 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC64FBFC2C17013B00C96A92 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PostTableViewCell.xib; path = ../PostTableViewCell.xib; sourceTree = "<group>"; };
 		FCBCC9002C0E1876002DA735 /* ReadView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBCC9032C0E1876002DA735 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCBCC9052C0E1876002DA735 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		FCBCC9022C0E1876002DA735 /* ReadView */ = {
 			isa = PBXGroup;
 			children = (
+				FC64FBFC2C17013B00C96A92 /* PostTableViewCell.xib */,
 				FCBCC9032C0E1876002DA735 /* AppDelegate.swift */,
 				FCBCC9052C0E1876002DA735 /* SceneDelegate.swift */,
 				FCBCC9072C0E1876002DA735 /* ViewController.swift */,
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCBCC90D2C0E1879002DA735 /* Assets.xcassets in Resources */,
+				FC64FBFD2C17013C00C96A92 /* PostTableViewCell.xib in Resources */,
 				FCBCC9102C0E1879002DA735 /* Base in Resources */,
 				FCBCC90B2C0E1876002DA735 /* Base in Resources */,
 				FCBCC9182C0E1A12002DA735 /* GoogleService-Info.plist in Resources */,

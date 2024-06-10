@@ -20,13 +20,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "PostSearchCell")
         
         // 초기 데이터 로드
-        loadPosts()
+        listenForPosts()
     }
     
-    func loadPosts() {
-        // Firebase에서 게시글 데이터를 로드합니다.
+    func listenForPosts() {
+        // Firebase에서 게시글 데이터를 실시간으로 로드합니다.
         let db = Firestore.firestore()
-        db.collection("reviews").getDocuments { (snapshot, error) in
+        db.collection("reviews").addSnapshotListener { (snapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error.localizedDescription)")
             } else {
@@ -50,7 +50,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.reloadData()
     }
 
-    
     // UITableViewDataSource 메서드
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredPosts.count
@@ -64,5 +63,18 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.titleLabel.text = post.title
         cell.genreLabel.text = post.genre
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedPost = filteredPosts[indexPath.row]
+        showDetailViewController(post: selectedPost)
+    }
+
+    func showDetailViewController(post: Post) {
+        guard let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
+            return
+        }
+        detailViewController.post = post
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
