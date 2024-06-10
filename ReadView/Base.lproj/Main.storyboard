@@ -108,7 +108,7 @@
             </objects>
             <point key="canvasLocation" x="472.51908396946561" y="4.9295774647887329"/>
         </scene>
-        <!--Main View Controller-->
+        <!--홈-->
         <scene sceneID="k2J-LU-FUi">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="ncV-6g-Gbt" customClass="MainViewController" customModule="ReadView" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,32 +121,32 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uhM-Ad-7SU">
-                                    <size key="itemSize" width="200" height="350"/>
+                                    <size key="itemSize" width="190" height="256"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCell" id="1Hu-ah-Bbd" customClass="PostCollectionViewCell" customModule="ReadView" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="190" height="280"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="190" height="256"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZJe-2u-PRb">
-                                            <rect key="frame" x="0.0" y="0.0" width="190" height="280"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="190" height="256"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vHg-GM-y1K">
-                                                    <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="190" height="177.66666666666666"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장르" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0S-dl-wIZ">
-                                                    <rect key="frame" x="0.0" y="259" width="190" height="21"/>
+                                                    <rect key="frame" x="0.0" y="220" width="190" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="책 제목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCs-Vo-PIx">
-                                                    <rect key="frame" x="0.0" y="229" width="190" height="22"/>
+                                                    <rect key="frame" x="64" y="185" width="62" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="mia-ge-JIU"/>
+                                                        <constraint firstAttribute="height" constant="22" id="3s4-Gu-4YN"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                     <nil key="textColor"/>
@@ -154,19 +154,18 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="lCs-Vo-PIx" firstAttribute="trailing" secondItem="O0S-dl-wIZ" secondAttribute="trailing" id="0Ka-ek-UWL"/>
-                                                <constraint firstItem="O0S-dl-wIZ" firstAttribute="top" secondItem="lCs-Vo-PIx" secondAttribute="bottom" constant="8" id="0LH-fm-dHj"/>
-                                                <constraint firstItem="lCs-Vo-PIx" firstAttribute="leading" secondItem="ZJe-2u-PRb" secondAttribute="leading" id="1s7-M7-WXE"/>
-                                                <constraint firstItem="vHg-GM-y1K" firstAttribute="top" secondItem="ZJe-2u-PRb" secondAttribute="top" id="8wY-I6-RH1"/>
-                                                <constraint firstItem="lCs-Vo-PIx" firstAttribute="top" secondItem="vHg-GM-y1K" secondAttribute="bottom" constant="39" id="PUi-0q-Bbx"/>
-                                                <constraint firstAttribute="bottom" secondItem="lCs-Vo-PIx" secondAttribute="bottom" constant="29" id="W4q-dy-tmv"/>
-                                                <constraint firstItem="lCs-Vo-PIx" firstAttribute="trailing" secondItem="vHg-GM-y1K" secondAttribute="trailing" id="mzw-LK-bUL"/>
-                                                <constraint firstItem="lCs-Vo-PIx" firstAttribute="leading" secondItem="vHg-GM-y1K" secondAttribute="leading" id="r1M-e9-TQF"/>
-                                                <constraint firstItem="lCs-Vo-PIx" firstAttribute="centerX" secondItem="ZJe-2u-PRb" secondAttribute="centerX" id="tuP-7d-oZx"/>
-                                                <constraint firstItem="lCs-Vo-PIx" firstAttribute="leading" secondItem="O0S-dl-wIZ" secondAttribute="leading" id="wMX-zp-1ND"/>
+                                                <constraint firstItem="O0S-dl-wIZ" firstAttribute="top" secondItem="lCs-Vo-PIx" secondAttribute="bottom" constant="13" id="14v-ae-YPx"/>
+                                                <constraint firstItem="lCs-Vo-PIx" firstAttribute="centerX" secondItem="vHg-GM-y1K" secondAttribute="centerX" id="2Cr-sL-kcv"/>
+                                                <constraint firstItem="vHg-GM-y1K" firstAttribute="leading" secondItem="O0S-dl-wIZ" secondAttribute="leading" id="7W8-le-krX"/>
+                                                <constraint firstAttribute="bottom" secondItem="lCs-Vo-PIx" secondAttribute="bottom" constant="49" id="9vp-GW-Os1"/>
+                                                <constraint firstItem="lCs-Vo-PIx" firstAttribute="centerX" secondItem="ZJe-2u-PRb" secondAttribute="centerX" id="IGC-oP-cRI"/>
+                                                <constraint firstItem="lCs-Vo-PIx" firstAttribute="top" secondItem="vHg-GM-y1K" secondAttribute="bottom" constant="7.3333333333333428" id="T5b-W5-qBG"/>
+                                                <constraint firstItem="lCs-Vo-PIx" firstAttribute="centerX" secondItem="O0S-dl-wIZ" secondAttribute="centerX" id="hwY-ns-iGJ"/>
+                                                <constraint firstItem="vHg-GM-y1K" firstAttribute="top" secondItem="ZJe-2u-PRb" secondAttribute="top" id="op5-zT-aev"/>
+                                                <constraint firstItem="vHg-GM-y1K" firstAttribute="leading" secondItem="ZJe-2u-PRb" secondAttribute="leading" id="uPW-r6-Pqe"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="190" height="280"/>
+                                        <size key="customSize" width="190" height="256"/>
                                         <connections>
                                             <outlet property="genreLabel" destination="O0S-dl-wIZ" id="yqQ-8p-uxg"/>
                                             <outlet property="imageView" destination="vHg-GM-y1K" id="Wjd-T9-gS7"/>
@@ -179,14 +178,14 @@
                         <viewLayoutGuide key="safeArea" id="qmT-cQ-gCk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tFf-Vm-sJQ"/>
+                    <navigationItem key="navigationItem" title="홈" id="tFf-Vm-sJQ"/>
                     <connections>
                         <outlet property="collectionView" destination="TXG-Tc-btC" id="0uA-rq-sBF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wxv-9E-zjl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1135" y="723"/>
+            <point key="canvasLocation" x="1133.5877862595419" y="722.53521126760563"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="HDL-q5-ooF">
@@ -240,6 +239,13 @@
                         <viewLayoutGuide key="safeArea" id="jCB-Xs-ddm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="11G-6s-5AX">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis.circle" catalog="system" id="lAk-sa-yAz">
+                            <connections>
+                                <action selector="showMenu:" destination="2oc-18-4gL" id="LVZ-YM-0lO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="authorEmailLabel" destination="9M2-qO-skk" id="umr-5r-6gE"/>
                         <outlet property="bookImageView" destination="fKq-fA-ep5" id="eic-Gh-Z78"/>
@@ -251,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Io0-Tt-1Iw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="316.79389312977099" y="1395.0704225352113"/>
+            <point key="canvasLocation" x="1243.5114503816794" y="1391.549295774648"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="c0b-nn-2tR">
@@ -286,7 +292,7 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DeK-zI-Iv2">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="117" width="393" height="652"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -548,8 +554,27 @@
             </objects>
             <point key="canvasLocation" x="2071" y="723"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IkX-jb-b3T">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TMC-AB-yWK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="taJ-cU-OCQ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2oc-18-4gL" kind="relationship" relationship="rootViewController" id="8ZS-i6-mac"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ffE-6d-Kg3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316.79389312977099" y="1391.549295774648"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="ellipsis.circle" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person" catalog="system" width="128" height="121"/>

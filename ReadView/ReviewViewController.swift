@@ -18,7 +18,7 @@ class ReviewViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var reviewTextView: UITextView!
     
     var currentUserEmail: String? // 현재 사용자의 이메일을 저장하기 위한 변수
-    var genres = ["시", "추리 소설", "스릴러 소설", "로맨스 소설", "에세이", "교육 도서", "기타"]
+    var genres = ["문학 소설", "추리 소설", "스릴러 소설", "로맨스 소설", "에세이", "시", "동화책", "기타"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +64,11 @@ class ReviewViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                         self.showAlert(message: "이미지 URL 가져오기 실패: \(error!.localizedDescription)")
                         return
                     }
-                    db.collection("reviews").addDocument(data: [
+                    //고유 문서 ID 얻기 위한 변수
+                    let docRef = db.collection("reviews").document()
+
+                    docRef.setData([
+                        "id": docRef.documentID,
                         "title": title,
                         "review": review,
                         "genre": genre,
