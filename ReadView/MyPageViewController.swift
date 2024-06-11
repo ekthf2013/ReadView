@@ -106,7 +106,6 @@ class MyPageViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     }
                     DispatchQueue.main.async {
                         let image = UIImage(data: data)
-                        print("Image loaded successfully: \(image ?? nil)")
                         reviewVC.reviewImage = image
                         self.navigationController?.pushViewController(reviewVC, animated: true)
                     }
@@ -116,7 +115,6 @@ class MyPageViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
-
 
     
     // UITableViewDelegate 메소드

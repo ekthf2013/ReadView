@@ -105,7 +105,7 @@ class ReviewViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                         self.showAlert(message: "리뷰 수정 실패: \(error.localizedDescription)")
                     } else {
                         // 리뷰가 업데이트되었음을 알립니다.
-                        self.showAlert1(message: "리뷰가 수정되었습니다.")
+                        self.showAlert2()
                     }
                 }
             }
@@ -169,6 +169,14 @@ class ReviewViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         present(alertController, animated: true, completion: nil)
     }
     
+    private func showAlert2() {
+        let alertController = UIAlertController(title: "알림", message: "리뷰가 수정되었습니다.", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "확인", style: .default) { _ in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alertController.addAction(okayAction)
+        present(alertController, animated: true, completion: nil)
+    }
     private func clearFields() {
         titleTextField.text = ""
         imageView.image = nil

@@ -58,8 +58,7 @@ class DetailViewController: UIViewController {
         } else {
             // 현재 사용자가 포스트의 작성자가 아닌 경우, "신고하기" 메뉴를 추가합니다.
             let reportAction = UIAlertAction(title: "신고하기", style: .destructive) { _ in
-                // 신고 로직을 구현합니다.
-                // 예: 신고를 처리하는 Firestore 쿼리를 실행하고, 신고 후 UI를 업데이트합니다.
+                self.showAlert()
             }
             alertController.addAction(reportAction)
         }
@@ -73,7 +72,10 @@ class DetailViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
-    
+    private func showAlert(){
+        let alertController = UIAlertController(title: "알림", message: "접수하였습니다.", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "확인", style: .default))
+    }
     // 포스트를 삭제하는 함수
     func deletePost() {
         guard let postId = post?.id else {
