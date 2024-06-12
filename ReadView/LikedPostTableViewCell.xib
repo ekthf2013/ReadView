@@ -20,14 +20,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vF7-7l-h1f">
-                        <rect key="frame" x="143" y="26" width="42" height="21"/>
+                        <rect key="frame" x="131" y="26" width="217" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBw-Yi-Yge">
-                        <rect key="frame" x="143" y="55" width="42" height="21"/>
+                        <rect key="frame" x="131" y="55" width="217" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -40,7 +40,7 @@
                 <outlet property="postImageView" destination="Mp3-Vo-C2R" id="gYc-k7-gO2"/>
                 <outlet property="titleLabel" destination="vF7-7l-h1f" id="Ey8-1s-cFW"/>
             </connections>
-            <point key="canvasLocation" x="163" y="-37"/>
+            <point key="canvasLocation" x="162.59541984732823" y="-37.676056338028168"/>
         </tableViewCell>
     </objects>
 </document>
