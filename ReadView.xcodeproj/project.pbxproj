@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC0525292C19C56A0060A08F /* LikedPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0525282C19C56A0060A08F /* LikedPostsViewController.swift */; };
+		FC05252B2C19C6980060A08F /* LikedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC05252A2C19C6980060A08F /* LikedPostTableViewCell.swift */; };
+		FC05252D2C19C6D20060A08F /* LikedPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC05252C2C19C6D20060A08F /* LikedPostTableViewCell.xib */; };
 		FC64FBFD2C17013C00C96A92 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC64FBFC2C17013B00C96A92 /* PostTableViewCell.xib */; };
 		FC64FBFF2C17417700C96A92 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC64FBFE2C17417700C96A92 /* MyPageViewController.swift */; };
 		FC64FC012C17435F00C96A92 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC64FC002C17435F00C96A92 /* MyPageTableViewCell.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC0525282C19C56A0060A08F /* LikedPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPostsViewController.swift; sourceTree = "<group>"; };
+		FC05252A2C19C6980060A08F /* LikedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPostTableViewCell.swift; sourceTree = "<group>"; };
+		FC05252C2C19C6D20060A08F /* LikedPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikedPostTableViewCell.xib; sourceTree = "<group>"; };
 		FC64FBFC2C17013B00C96A92 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PostTableViewCell.xib; path = ../PostTableViewCell.xib; sourceTree = "<group>"; };
 		FC64FBFE2C17417700C96A92 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		FC64FC002C17435F00C96A92 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
@@ -120,6 +126,9 @@
 				FC64FBFE2C17417700C96A92 /* MyPageViewController.swift */,
 				FC64FC002C17435F00C96A92 /* MyPageTableViewCell.swift */,
 				FC64FC022C17469500C96A92 /* MyPageTableViewCell.xib */,
+				FC0525282C19C56A0060A08F /* LikedPostsViewController.swift */,
+				FC05252A2C19C6980060A08F /* LikedPostTableViewCell.swift */,
+				FC05252C2C19C6D20060A08F /* LikedPostTableViewCell.xib */,
 			);
 			path = ReadView;
 			sourceTree = "<group>";
@@ -208,6 +217,7 @@
 				FCBCC9102C0E1879002DA735 /* Base in Resources */,
 				FCBCC90B2C0E1876002DA735 /* Base in Resources */,
 				FCBCC9182C0E1A12002DA735 /* GoogleService-Info.plist in Resources */,
+				FC05252D2C19C6D20060A08F /* LikedPostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC0525292C19C56A0060A08F /* LikedPostsViewController.swift in Sources */,
 				FC64FC012C17435F00C96A92 /* MyPageTableViewCell.swift in Sources */,
 				FCBCC9262C0E1D3C002DA735 /* LoginViewController.swift in Sources */,
 				FCBCC9302C0EC31E002DA735 /* SearchViewController.swift in Sources */,
@@ -226,6 +237,7 @@
 				FCBCC9082C0E1876002DA735 /* ViewController.swift in Sources */,
 				FCBCC9322C0EC544002DA735 /* PostTableViewCell.swift in Sources */,
 				FCBCC9282C0E1E50002DA735 /* SignupViewController.swift in Sources */,
+				FC05252B2C19C6980060A08F /* LikedPostTableViewCell.swift in Sources */,
 				FC64FBFF2C17417700C96A92 /* MyPageViewController.swift in Sources */,
 				FCBCC92A2C0E1F71002DA735 /* MainViewController.swift in Sources */,
 				FCBCC9342C0EC6ED002DA735 /* Post.swift in Sources */,

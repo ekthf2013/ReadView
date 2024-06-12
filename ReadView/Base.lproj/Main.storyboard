@@ -235,6 +235,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wah-yw-Sfz">
+                                <rect key="frame" x="223" y="447" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="likeButtonTapped:" destination="2oc-18-4gL" eventType="touchUpInside" id="69i-Yh-OcQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jCB-Xs-ddm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -250,6 +259,7 @@
                         <outlet property="authorEmailLabel" destination="9M2-qO-skk" id="umr-5r-6gE"/>
                         <outlet property="bookImageView" destination="fKq-fA-ep5" id="eic-Gh-Z78"/>
                         <outlet property="genreLabel" destination="EzV-oy-Kb3" id="Voy-Ys-nV6"/>
+                        <outlet property="likeButton" destination="wah-yw-Sfz" id="4QR-kC-t3Z"/>
                         <outlet property="reviewContentLabel" destination="JYV-UX-HOI" id="3HH-Am-WVl"/>
                         <outlet property="timestampLabel" destination="TTz-1z-smV" id="ir7-Wt-7Nk"/>
                         <outlet property="titleLabel" destination="Y6N-hA-PZU" id="hwR-gy-PdY"/>
@@ -274,8 +284,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbt-OP-yPI">
+                                <rect key="frame" x="263" y="200" width="83" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="로그아웃"/>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="kjW-WV-jgU" eventType="touchUpInside" id="X9W-91-CXJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgQ-QD-j1H">
+                                <rect key="frame" x="159" y="242" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="likedPostsButtonTapped:" destination="kjW-WV-jgU" eventType="touchUpInside" id="pqw-Tt-1Df"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fpg-0K-q1y">
-                                <rect key="frame" x="0.0" y="345" width="392" height="424"/>
+                                <rect key="frame" x="1" y="283" width="392" height="486"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -309,15 +337,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbt-OP-yPI">
-                                <rect key="frame" x="263" y="200" width="83" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="로그아웃"/>
-                                <connections>
-                                    <action selector="logoutButtonTapped:" destination="kjW-WV-jgU" eventType="touchUpInside" id="X9W-91-CXJ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vo9-Ic-4vD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -331,6 +350,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JxF-7e-e8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5307.6335877862593" y="722.53521126760563"/>
+        </scene>
+        <!--Liked Posts View Controller-->
+        <scene sceneID="aZW-ih-ozD">
+            <objects>
+                <viewController storyboardIdentifier="LikedPostsViewController" id="T2o-6M-V9D" customClass="LikedPostsViewController" customModule="ReadView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Avy-mU-np2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YR4-NO-sIt">
+                                <rect key="frame" x="0.0" y="138" width="393" height="680"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GYK-RQ-eQU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="YR4-NO-sIt" id="Owb-Du-rdS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="76x-iS-C7v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5307.6335877862593" y="1391.549295774648"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="oIQ-5U-AP5">

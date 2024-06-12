@@ -46,6 +46,12 @@ class MyPageViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    @IBAction func likedPostsButtonTapped(_ sender: UIButton) {
+        if let likedPostsVC = storyboard?.instantiateViewController(withIdentifier: "LikedPostsViewController") as? LikedPostsViewController {
+            navigationController?.pushViewController(likedPostsVC, animated: true)
+        }
+    }
+
     // Firestore에서 사용자가 작성한 리뷰를 가져오는 메소드
     func fetchUserReviews() {
         guard let userEmail = Auth.auth().currentUser?.email else { return }
@@ -88,6 +94,10 @@ class MyPageViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 100 // 원하는 셀 높이로 설정합니다.
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "내가 작성한 리뷰"
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 선택된 셀에 해당하는 리뷰를 가져옵니다.
         let selectedReview = reviews[indexPath.row]
