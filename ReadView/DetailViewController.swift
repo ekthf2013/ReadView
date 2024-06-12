@@ -28,9 +28,9 @@ class DetailViewController: UIViewController {
             
             // 등록된 시간을 날짜 형식으로 변환하여 표시합니다.
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yy/MM/dd HH:mm"
+            dateFormatter.dateFormat = "yy/MM/dd"
             let timestamp = dateFormatter.string(from: post.createdAt)
-            timestampLabel.text = "등록 시간: \(timestamp)"
+            timestampLabel.text = "\(timestamp)"
             
             // 책의 이미지를 표시합니다. SDWebImage 등을 사용하여 원격 이미지를 가져올 수 있습니다.
             if let imageUrl = URL(string: post.imageURL) {
