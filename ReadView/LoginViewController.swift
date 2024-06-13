@@ -8,8 +8,16 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 탭 제스처를 추가하여 키보드를 해제할 수 있게 설정
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
     }
-
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         guard let email = emailTextField.text, !email.isEmpty,
               let password = passwordTextField.text, !password.isEmpty else {
@@ -18,11 +26,18 @@ class LoginViewController: UIViewController {
             return
         }
 
+        // 로딩 인디케이터 시작
+        let loadingAlert = UIAlertController(title: nil, message: "로그인 중...", preferredStyle: .alert)
+        present(loadingAlert, animated: true, completion: nil)
+
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            // 로딩 인디케이터 종료
+            loadingAlert.dismiss(animated: true, completion: nil)
+
             guard let self = self else { return }
-            if let error = error {
+            if error != nil {
                 // 로그인 실패 처리
-                self.showAlert(message: "로그인 실패: \(error.localizedDescription)")
+                self.showAlert(message: "로그인 실패")
             } else {
                 // 로그인 성공 시 탭 바 컨트롤러로 이동
                 if let mainTabBarController = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController {

@@ -16,7 +16,6 @@
 		FC64FC032C17469500C96A92 /* MyPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC64FC022C17469500C96A92 /* MyPageTableViewCell.xib */; };
 		FCBCC9042C0E1876002DA735 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCC9032C0E1876002DA735 /* AppDelegate.swift */; };
 		FCBCC9062C0E1876002DA735 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCC9052C0E1876002DA735 /* SceneDelegate.swift */; };
-		FCBCC9082C0E1876002DA735 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCC9072C0E1876002DA735 /* ViewController.swift */; };
 		FCBCC90B2C0E1876002DA735 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FCBCC90A2C0E1876002DA735 /* Base */; };
 		FCBCC90D2C0E1879002DA735 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCBCC90C2C0E1879002DA735 /* Assets.xcassets */; };
 		FCBCC9102C0E1879002DA735 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FCBCC90F2C0E1879002DA735 /* Base */; };
@@ -50,7 +49,6 @@
 		FCBCC9002C0E1876002DA735 /* ReadView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBCC9032C0E1876002DA735 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCBCC9052C0E1876002DA735 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FCBCC9072C0E1876002DA735 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCBCC90A2C0E1876002DA735 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCBCC90C2C0E1879002DA735 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCBCC90F2C0E1879002DA735 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,10 +103,8 @@
 		FCBCC9022C0E1876002DA735 /* ReadView */ = {
 			isa = PBXGroup;
 			children = (
-				FC64FBFC2C17013B00C96A92 /* PostTableViewCell.xib */,
 				FCBCC9032C0E1876002DA735 /* AppDelegate.swift */,
 				FCBCC9052C0E1876002DA735 /* SceneDelegate.swift */,
-				FCBCC9072C0E1876002DA735 /* ViewController.swift */,
 				FCBCC9092C0E1876002DA735 /* Main.storyboard */,
 				FCBCC90C2C0E1879002DA735 /* Assets.xcassets */,
 				FCBCC90E2C0E1879002DA735 /* LaunchScreen.storyboard */,
@@ -119,11 +115,12 @@
 				FCBCC9292C0E1F71002DA735 /* MainViewController.swift */,
 				FCBCC92F2C0EC31E002DA735 /* SearchViewController.swift */,
 				FCBCC9312C0EC544002DA735 /* PostTableViewCell.swift */,
+				FC64FBFC2C17013B00C96A92 /* PostTableViewCell.xib */,
 				FCBCC9332C0EC6ED002DA735 /* Post.swift */,
 				FCBCC9352C0F40E3002DA735 /* ReviewViewController.swift */,
 				FCBCC9372C0F4286002DA735 /* PostCollectionViewCell.swift */,
-				FC64FBFE2C17417700C96A92 /* MyPageViewController.swift */,
 				FC64FC002C17435F00C96A92 /* MyPageTableViewCell.swift */,
+				FC64FBFE2C17417700C96A92 /* MyPageViewController.swift */,
 				FC64FC022C17469500C96A92 /* MyPageTableViewCell.xib */,
 				FCBCC93E2C0F53C6002DA735 /* DetailViewController.swift */,
 				FC0525282C19C56A0060A08F /* LikedPostsViewController.swift */,
@@ -234,7 +231,6 @@
 				FCBCC9302C0EC31E002DA735 /* SearchViewController.swift in Sources */,
 				FCBCC9362C0F40E3002DA735 /* ReviewViewController.swift in Sources */,
 				FCBCC93F2C0F53C6002DA735 /* DetailViewController.swift in Sources */,
-				FCBCC9082C0E1876002DA735 /* ViewController.swift in Sources */,
 				FCBCC9322C0EC544002DA735 /* PostTableViewCell.swift in Sources */,
 				FCBCC9282C0E1E50002DA735 /* SignupViewController.swift in Sources */,
 				FC05252B2C19C6980060A08F /* LikedPostTableViewCell.swift in Sources */,

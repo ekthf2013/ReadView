@@ -8,6 +8,13 @@ class SignupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     @IBAction func signupButtonTapped(_ sender: UIButton) {
@@ -20,9 +27,9 @@ class SignupViewController: UIViewController {
 
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
             guard let self = self else { return }
-            if let error = error {
+            if error != nil {
                 // 회원가입 실패 처리
-                self.showAlert(message: "회원가입 실패: \(error.localizedDescription)")
+                self.showAlert(message: "회원가입 실패")
                 return
             }
             // 회원가입 성공 시 이전 화면으로 돌아가기

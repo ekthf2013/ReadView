@@ -1,6 +1,7 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
+import SDWebImage
 
 class LikedPostsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -33,19 +34,15 @@ class LikedPostsViewController: UIViewController, UITableViewDelegate, UITableVi
         
         query.addSnapshotListener { [weak self] (querySnapshot, error) in
             guard let self = self else { return }
-            if let error = error {
-                print("Error getting documents: \(error)")
-            } else {
-                self.likedPosts = []
-                for document in querySnapshot!.documents {
-                    let postId = document["postId"] as! String
-                    // 해당 postId에 해당하는 포스트를 불러와서 likedPosts 배열에 추가합니다.
-                    db.collection("reviews").document(postId).getDocument { (document, error) in
-                        if let document = document, document.exists {
-                            if let post = try? document.data(as: Post.self) {
-                                self.likedPosts.append(post)
-                                self.tableView.reloadData()
-                            }
+            self.likedPosts = []
+            for document in querySnapshot!.documents {
+                let postId = document["postId"] as! String
+                // 해당 postId에 해당하는 포스트를 불러와서 likedPosts 배열에 추가
+                db.collection("reviews").document(postId).getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        if let post = try? document.data(as: Post.self) {
+                            self.likedPosts.append(post)
+                            self.tableView.reloadData()
                         }
                     }
                 }
@@ -57,7 +54,7 @@ class LikedPostsViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedPost = likedPosts[indexPath.row]
 
-        // DetailViewController에 선택한 포스트를 전달합니다.
+        // DetailViewController에 선택한 포스트를 전달
         if let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
             detailVC.post = selectedPost
             navigationController?.pushViewController(detailVC, animated: true)
@@ -78,7 +75,7 @@ class LikedPostsViewController: UIViewController, UITableViewDelegate, UITableVi
             return UITableViewCell()
         }
         let post = likedPosts[indexPath.row]
-        // 셀에 포스트 정보를 표시합니다.
+        // 셀에 포스트 정보 표시
         cell.titleLabel.text = post.title
         cell.genreLabel.text = post.genre
         if let imageURL = URL(string: post.imageURL) {
@@ -89,42 +86,36 @@ class LikedPostsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // 해당 셀의 데이터를 삭제합니다.
-            let post = likedPosts[indexPath.row]
-            
-            // 파이어베이스에서 해당 포스트에 대한 좋아요 데이터를 삭제합니다.
-            guard let currentUserEmail = Auth.auth().currentUser?.email else { return }
-            let db = Firestore.firestore()
-            db.collection("likes")
-                .whereField("userEmail", isEqualTo: currentUserEmail)
-                .whereField("postId", isEqualTo: post.id)
-                .getDocuments { [weak self] (querySnapshot, error) in
-                    guard let self = self else { return }
-                    if let error = error {
-                        print("Error getting documents: \(error)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            db.collection("likes").document(document.documentID).delete { error in
-                                if let error = error {
-                                    print("Error deleting document: \(error)")
-                                } else {
-                                    print("Document successfully deleted!")
-                                    // 배열에서도 해당 포스트 데이터를 삭제합니다.
-                                    if let index = self.likedPosts.firstIndex(where: { $0.id == post.id }) {
-                                        self.likedPosts.remove(at: index)
-                                        // 테이블 뷰에서 해당 행을 삭제합니다.
-                                        tableView.deleteRows(at: [indexPath], with: .fade)
-                                        tableView.reloadData()
-                                    }
-                                }
-                            }
+            deleteLikedPost(at: indexPath)
+        }
+    }
+    
+    // 좋아요 취소 및 관련 데이터 삭제 메소드
+    private func deleteLikedPost(at indexPath: IndexPath) {
+        let post = likedPosts[indexPath.row]
+        
+        guard let currentUserEmail = Auth.auth().currentUser?.email else { return }
+        let db = Firestore.firestore()
+        db.collection("likes")
+            .whereField("userEmail", isEqualTo: currentUserEmail)
+            .whereField("postId", isEqualTo: post.id)
+            .getDocuments { [weak self] (querySnapshot, error) in
+                guard let self = self else { return }
+                for document in querySnapshot!.documents {
+                db.collection("likes").document(document.documentID).delete { error in
+                        // 배열에서도 해당 포스트 데이터 삭제
+                        if let index = self.likedPosts.firstIndex(where: { $0.id == post.id }) {
+                            self.likedPosts.remove(at: index)
+                            // 테이블 뷰에서 해당 행 삭제
+                            self.tableView.deleteRows(at: [indexPath], with: .fade)
+                            self.tableView.reloadData()
                         }
                     }
                 }
-        }
+            }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100 // 원하는 셀 높이로 설정합니다.
+        return 100 // 원하는 셀 높이로 설정
     }
 }
