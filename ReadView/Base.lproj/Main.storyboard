@@ -76,6 +76,11 @@
                                     <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sux-xL-eII"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ReadView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8I-mL-V1D">
+                                <rect key="frame" x="103" y="235" width="187" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -86,8 +91,10 @@
                             <constraint firstItem="4ZF-uH-pA6" firstAttribute="centerY" secondItem="inq-MB-csJ" secondAttribute="centerY" id="8OL-q7-owV"/>
                             <constraint firstItem="4ZF-uH-pA6" firstAttribute="leading" secondItem="R8f-6q-Mxq" secondAttribute="leading" id="Egn-KX-6U7"/>
                             <constraint firstItem="inq-MB-csJ" firstAttribute="top" secondItem="wfc-Tk-U1h" secondAttribute="bottom" constant="33" id="HA5-xB-MRh"/>
+                            <constraint firstItem="O8I-mL-V1D" firstAttribute="centerX" secondItem="3lH-aK-GyO" secondAttribute="centerX" id="HHn-YK-Pgu"/>
                             <constraint firstItem="wfc-Tk-U1h" firstAttribute="leading" secondItem="R8f-6q-Mxq" secondAttribute="trailing" constant="32.666666666666657" id="NLY-3v-HG0"/>
                             <constraint firstItem="wfc-Tk-U1h" firstAttribute="leading" secondItem="inq-MB-csJ" secondAttribute="leading" id="RC0-y5-lvM"/>
+                            <constraint firstItem="O8I-mL-V1D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="132" id="SRK-GL-6eG"/>
                             <constraint firstItem="2Qf-ni-8Jc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UBi-xe-VPZ"/>
                             <constraint firstItem="4ZF-uH-pA6" firstAttribute="leading" secondItem="3lH-aK-GyO" secondAttribute="leading" id="fhn-Fg-Ph4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wfc-Tk-U1h" secondAttribute="trailing" constant="43" id="goF-vA-NTG"/>
@@ -108,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="472.51908396946561" y="4.9295774647887329"/>
+            <point key="canvasLocation" x="317" y="5"/>
         </scene>
         <!--리뷰 목록-->
         <scene sceneID="k2J-LU-FUi">
@@ -187,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wxv-9E-zjl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1133.5877862595419" y="722.53521126760563"/>
+            <point key="canvasLocation" x="1091" y="723"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="HDL-q5-ooF">
@@ -308,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Io0-Tt-1Iw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1243.5114503816794" y="1391.549295774648"/>
+            <point key="canvasLocation" x="1091" y="1415"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="c0b-nn-2tR">
@@ -320,7 +327,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZg-iS-s0p">
                                 <rect key="frame" x="66" y="170" width="43.666666666666657" height="34"/>
-                                <color key="backgroundColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.75699300700000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -392,7 +399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JxF-7e-e8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5307.6335877862593" y="722.53521126760563"/>
+            <point key="canvasLocation" x="3421" y="723"/>
         </scene>
         <!--Liked Posts View Controller-->
         <scene sceneID="aZW-ih-ozD">
@@ -418,7 +425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76x-iS-C7v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6234.3511450381675" y="1391.549295774648"/>
+            <point key="canvasLocation" x="2755" y="1460"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="oIQ-5U-AP5">
@@ -453,7 +460,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVe-hK-3ku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2906.1068702290077" y="722.53521126760563"/>
+            <point key="canvasLocation" x="1873" y="723"/>
         </scene>
         <!--작성-->
         <scene sceneID="hO4-3r-mXX">
@@ -571,7 +578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xeb-zj-Yli" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3651.1450381679388" y="722.53521126760563"/>
+            <point key="canvasLocation" x="2644" y="723"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="fVA-jf-54Z">
@@ -676,7 +683,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40w-SD-D54" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316.793893129771" y="4.9295774647887329"/>
+            <point key="canvasLocation" x="1092" y="5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="khU-jU-Ttj">
@@ -756,7 +763,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94R-hM-ENR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2071" y="723"/>
+            <point key="canvasLocation" x="-454" y="1460"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IkX-jb-b3T">
@@ -774,7 +781,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffE-6d-Kg3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="316.79389312977099" y="1391.549295774648"/>
+            <point key="canvasLocation" x="317" y="1460"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="Fix-3V-jfq">
@@ -793,7 +800,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPS-e7-Gcm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4380.9160305343512" y="722.53521126760563"/>
+            <point key="canvasLocation" x="3422" y="723"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3aE-y2-GyJ">
@@ -811,7 +818,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjU-e0-IIx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5307.6335877862593" y="1391.549295774648"/>
+            <point key="canvasLocation" x="3482" y="1460"/>
         </scene>
     </scenes>
     <resources>
@@ -833,6 +840,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

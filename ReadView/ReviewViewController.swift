@@ -89,7 +89,7 @@ class ReviewViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                     self?.addNewReview(with: title, reviewText, genre, url, userEmail)
                 }
             case .failure(let error):
-                self?.showAlert(message: "이미지 업로드 실패: \(error.localizedDescription)")
+                self?.showAlert(message: "이미지 업로드 실패")
             }
         }
     }
